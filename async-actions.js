@@ -8,12 +8,6 @@ const FETCH_USERS_START = "FETCH_USERS_START";
 const FETCH_USERS_COMPLETE = "FETCH_USERS_COMPLETE";
 const FETCH_USERS_ERROR = "FETCH_USERS_ERROR";
 
-const initialState = {
-  loading: false,
-  users: [],
-  error: "",
-};
-
 const fetchUsersStart = () => {
   return {
     type: FETCH_USERS_START,
@@ -32,6 +26,12 @@ const fetchUsersError = (error) => {
     type: FETCH_USERS_ERROR,
     payload: error,
   };
+};
+
+const initialState = {
+  loading: false,
+  users: [],
+  error: "",
 };
 
 const usersReducer = (state = initialState, action) => {
